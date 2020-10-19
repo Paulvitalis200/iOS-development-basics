@@ -1,6 +1,6 @@
 import Cocoa
 
-var str:String? = nil
+var str:String? = "Hello"
 
 // Using an IF statement to check for nil
 if (str != nil){
@@ -9,5 +9,17 @@ if (str != nil){
 }
 else {
    print("Str is nil")
+}
+
+// Optional binding
+if (str != nil) {
+    let a = str!
+    
+    print(a)
+}
+
+// Checks for nil, and assigns value to constant a
+if let a = str {
+    print(a)
 }
 
