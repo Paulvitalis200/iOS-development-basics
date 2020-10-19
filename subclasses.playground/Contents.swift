@@ -46,3 +46,9 @@ if (sc2 != nil) {
 
 // The saviour. THE OPTIONAL CHAINING
 sc?.cruise()
+
+
+// Implicitly unwrapped optionals
+var s3:SpaceShip! = SpaceShip()
+
+s3.cruise()
