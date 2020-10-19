@@ -23,3 +23,26 @@ if let a = str {
     print(a)
 }
 
+
+// Optional chaining
+class SpaceShip {
+    func cruise() {
+        print("Spaceship cruise!")
+    }
+}
+
+
+var sc:SpaceShip? = SpaceShip()
+var sc2:SpaceShip? = nil
+
+if (sc != nil) {
+    sc!.cruise()
+}
+
+// Won't run because the sc2 is nil
+if (sc2 != nil) {
+    sc2!.cruise()
+}
+
+// The saviour. THE OPTIONAL CHAINING
+sc?.cruise()
