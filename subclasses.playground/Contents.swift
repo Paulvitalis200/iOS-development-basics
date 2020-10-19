@@ -1,38 +1,54 @@
 import Cocoa
 
-var str = "Hello, playground"
+var str:String? = "Hello"
 
+// Using an IF statement to check for nil
+if (str != nil){
+    // Unwrap the optional to get the value
+    print(str!)
+}
+else {
+   print("Str is nil")
+}
+
+// Optional binding
+if (str != nil) {
+    let a = str!
+    
+    print(a)
+}
+
+// Checks for nil, and assigns value to constant a
+if let a = str {
+    print(a)
+}
+
+
+// Optional chaining
 class SpaceShip {
-    var fuelLevel = 50
-    
     func cruise() {
-        fuelLevel -= 5
-    }
-    
-    func thrust() {
-        fuelLevel -= 20
+        print("Spaceship cruise!")
     }
 }
 
-let s = SpaceShip()
-s.cruise()
 
-class UFO:SpaceShip {
-    override func cruise() {
-        
-        // Call the cruise method of the superclass
-        super.cruise()
-        
-        // Provide extended functionality
-        print(fuelLevel)
-    }
-    
-    override func thrust() {
-        print("UFO thrust")
-    }
+var sc:SpaceShip? = SpaceShip()
+var sc2:SpaceShip? = nil
+
+if (sc != nil) {
+    sc!.cruise()
 }
 
-let u = UFO()
-u.cruise()
-u.thrust()
+// Won't run because the sc2 is nil
+if (sc2 != nil) {
+    sc2!.cruise()
+}
 
+// The saviour. THE OPTIONAL CHAINING
+sc?.cruise()
+
+
+// Implicitly unwrapped optionals
+var s3:SpaceShip! = SpaceShip()
+
+s3.cruise()
