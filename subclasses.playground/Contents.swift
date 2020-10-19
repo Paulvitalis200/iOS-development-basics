@@ -1,38 +1,13 @@
 import Cocoa
 
-var str = "Hello, playground"
+var str:String? = nil
 
-class SpaceShip {
-    var fuelLevel = 50
-    
-    func cruise() {
-        fuelLevel -= 5
-    }
-    
-    func thrust() {
-        fuelLevel -= 20
-    }
+// Using an IF statement to check for nil
+if (str != nil){
+    // Unwrap the optional to get the value
+    print(str!)
 }
-
-let s = SpaceShip()
-s.cruise()
-
-class UFO:SpaceShip {
-    override func cruise() {
-        
-        // Call the cruise method of the superclass
-        super.cruise()
-        
-        // Provide extended functionality
-        print(fuelLevel)
-    }
-    
-    override func thrust() {
-        print("UFO thrust")
-    }
+else {
+   print("Str is nil")
 }
-
-let u = UFO()
-u.cruise()
-u.thrust()
 
