@@ -6,11 +6,11 @@ class SpaceShip {
     var fuelLevel = 50
     
     func cruise() {
-        print("Space ship cruise.")
+        fuelLevel -= 5
     }
     
     func thrust() {
-        print("Space ship thrust.")
+        fuelLevel -= 20
     }
 }
 
@@ -19,7 +19,12 @@ s.cruise()
 
 class UFO:SpaceShip {
     override func cruise() {
-        print("UFO cruise")
+        
+        // Call the cruise method of the superclass
+        super.cruise()
+        
+        // Provide extended functionality
+        print(fuelLevel)
     }
     
     override func thrust() {
